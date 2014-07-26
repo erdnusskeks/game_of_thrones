@@ -1,0 +1,12 @@
+<div class="episode">
+  <h2><%= @episode.title %></h2>
+  <div class="float"><%= image_tag @episode.picture_url(:thumb) if @episode.picture? %></div>
+  <div class="container description"><%= @episode.description %></div>
+  Suspense: <%= rating_for @episode, "suspense" %>
+  Action: <%= rating_for @episode, "action" %>
+  Humour: <%= rating_for @episode, "humour" %>
+  <p class="clearfix"></p>
+
+<%= link_to 'Edit', edit_episode_path(@episode) %> |
+<%= link_to 'Back', episodes_path %>
+</div>

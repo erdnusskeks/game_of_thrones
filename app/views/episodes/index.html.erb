@@ -1,0 +1,16 @@
+<div class="poster1">
+<h2>Season 1</h2>
+
+  <% @episodes.each do |episode| %>
+  <div class="episode">
+    <h2><%= link_to episode.title, episode %></h2>
+    <div class="float"><%= image_tag episode.picture_url(:thumb) if episode.picture? %></div>
+    <div class="container description"><%= episode.description %></div>
+    <p class="clearfix"><%= link_to 'Edit', edit_episode_path(episode) %> | <%= link_to 'Destroy', episode, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    </div>
+  <% end %>
+</div>
+
+
+
+
